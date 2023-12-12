@@ -1,0 +1,108 @@
+#contenedor {
+    color: #fff;
+    height: 100vh;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(40deg, rgba(2, 0, 36, 1) 0%, rgba(1, 1, 19, 1) 60%, rgba(0, 212, 255, 1) 100%);
+}
+
+.app-content {
+    height: 92vh;
+    animation: derecha 1s ease;
+}
+
+@keyframes derecha {
+
+    /* Animacion que se ejecuta cuando carga la pagina */
+    0% {
+        transform: translateX(-100px);
+        opacity: .3;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+
+    ion-icon {
+        font-size: 5rem;
+    }
+}
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 1rem;
+}
+
+input {
+    width: 80%;
+    text-align: center;
+    font-size: 16px;
+    background: linear-gradient(to left top, #000, #01182C) fixed;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.input:focus {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background: linear-gradient(to left top, #000, #02325c) fixed;
+}
+
+.radio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.styled-radio {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: rgb(8, 5, 63);
+    border: 2px rgba(123, 117, 117, 0.808);
+    margin-right: 15px;
+}
+
+.styled-radio:checked {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border: 2px solid yellow;
+}
+
+.boton-registro {
+    width: 50%;
+    padding: 10px;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border: 2px solid yellow;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    height: 8vh;
+    padding: 10px;
+
+    ion-icon {
+        font-size: 2rem;
+    }
+}

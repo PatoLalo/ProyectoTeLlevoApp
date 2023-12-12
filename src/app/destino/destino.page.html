@@ -1,0 +1,59 @@
+<ion-content [fullscreen]="true">
+    <div id="contenedor">
+        
+        <div id="app-content">
+            <div #map id="map"></div>
+            
+            
+            <div class="flotante">
+                <ion-list *ngIf="autocompleteItems" [hidden]="autocompleteItems.length == 0">
+                          <ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+                            {{ item.description }}
+                          </ion-item>
+                </ion-list>
+                <div class="input-filtro">
+                    <input type="text"  [(ngModel)]="end" (input)="updateSearchResults()" placeholder="Destino" class="input">
+                </div>
+                <div class="div-filtros">
+                    
+    
+                    <div >
+                        <!--<div class="input-filtro">
+                            <input type="text"  class="input"placeholder="Precio">
+    
+                        </div>-->
+                        <div class="input-filtro">
+                            <input type="number" [(ngModel)]="num_asientos" class="input"placeholder="Pasajeros">
+                        </div>
+                    </div>
+                    <!--<div class="input-destino">
+                        <input type="text"  placeholder="Hora de viaje" class="input">
+                    </div>-->
+                </div>
+    
+                <div class="div-input">
+                    <div>
+                        <button class="contact-button" type="button"  value="Buscar" (click)="buscarChoferesDisponibles()">Buscar choferes</button>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        
+        <!--<div id="footer">
+            <div class="icon menu-icon" (click)="animaIcon(0, 'bienvenido')">
+                <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <div class="icon menu-icon " (click)="animaIcon(1, 'detalle-chofer')">
+                <img src="/assets/driver-menu.png" alt="">
+            </div>
+            <div class="icon  menu-icon active-icon" (click)="animaIcon(2, 'list-choferes')">
+                <img src="/assets/traffic-jam.png" alt="">
+            </div>
+            <div class="icon menu-icon" (click)="animaIcon(3, 'list-recorridos')">
+                <img src="/assets/checklist.png" alt="">
+            </div>
+        </div>-->
+    </div>
+
+
+</ion-content>

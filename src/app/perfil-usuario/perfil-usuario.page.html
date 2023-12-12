@@ -1,0 +1,99 @@
+<ion-content [fullscreen]="true">
+    <div id="contenedor">
+        <div id="app-header">
+            <div class="profile-pic">
+                <img src="/assets/user.png" alt="" class="profile-img">
+            </div>
+            <h4>Eduardo Maulén</h4>
+        </div>
+        <div id="app-content">
+
+            <div class="detalle">
+                <div class="cabecera-detalle">
+                    <h5>Mi perfil</h5>
+                </div>
+
+                
+                <div class="one-input div-input">
+                    <div>
+                        <label for="nombre">Nombre</label>
+                        <input class="input" type="text" id="nombreUsuario" value=" Nombre" [(ngModel)]="nombre"readonly>
+                    </div>
+                </div>
+
+                <div class="one-input div-input">
+                    <div>
+                        <label for="apUsuario">Apellido</label>
+                        <input class="input" type="text" id="apellidoUsuario" value="Apellido" [(ngModel)]="apellido" readonly>
+                    </div>
+                </div>
+
+                <div class="one-input div-input">
+                    <div>
+                        <label for="apUsuario">Sexo</label>
+                        <input class="input" type="text" id="apellidoUsuario" value="Masculino" [(ngModel)]="sexo"readonly>
+                    </div>
+                </div>
+
+                <!-- <div class="one-input div-input">
+                    <div>
+                        <label for="genero">Genero</label><br>
+                        <select name="cars" class="input">
+                            <option value="masculino" class="op input">Masculino</option>
+                            <option value="femenino" class="op input">Femenino</option>
+                            <option value="prefiero no decir" class="op input">Prefiero no decir</option>
+                        </select>
+                    </div>
+                </div> -->
+
+                <div class="one-input div-input">
+                    <div>
+                        <label for="telefono">Telefono ✍🏻</label>
+                        <input class="input" type="text" id="telefono" value="+5699999999" [(ngModel)]="telefono">
+                    </div>
+                </div>
+
+                <div class="one-input div-input">
+                    <div>
+                        <label for="Usuario">Nombre usuario ✍🏻</label>
+                        <input class="input" type="text" id="nombreUsuario" value=" NombreUser" [(ngModel)]="nombreUser">
+                    </div>
+                </div>
+                <!--<div class="one-input div-input">
+                    <div>
+                        <label for="apUsuario">Contraseña</label>
+                        <input class="input" type="password" id="apellidoUsuario" value="Apellido" [(ngModel)]="password" readonly>
+                    </div>
+                </div>-->
+                <br>
+                <div class="two-input div-input">
+                    <div>
+                        <button class="contact-button" type="button" value="Contactar" (click)="guardar_cambios()">Guardar</button>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="icon menu-icon" (click)="animaIcon(0, 'bienvenido')">
+                <ion-icon name="home-outline"></ion-icon>
+            </div>
+
+            <div *ngIf="session.tipo == 'chofer'" class="icon menu-icon " (click)="animaIcon(1, 'perfil-chofer')">
+                <img src="/assets/driver-menu.png" alt="">
+            </div>
+            <div *ngIf="session.tipo == 'usuario'" class="icon  menu-icon active-icon" (click)="animaIcon(1, 'perfil-usuario')">
+                <img src="/assets/usuario.png" alt="">
+            </div>
+            <div *ngIf="session.tipo == 'usuario'" class="icon  menu-icon " (click)="animaIcon(2, 'list-choferes')">
+                <img src="/assets/traffic-jam.png" alt="">
+            </div>
+            <div *ngIf="session.tipo == 'usuario'" class="icon menu-icon" (click)="animaIcon(3, 'list-recorridos')">
+                <img src="/assets/checklist.png" alt="">
+            </div>
+            <div class="icon menu-icon" (click)="logout()">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+</ion-content>

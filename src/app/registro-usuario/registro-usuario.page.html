@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+  <div id="contenedor">
+
+    <div class="app-content">  
+      <header>
+          <ion-icon name="camera-outline"></ion-icon>
+          <h6>Formulario de registro</h6>
+      </header>
+
+      <div class="formulario">
+
+        <input type="text" placeholder="Nombre" [(ngModel)]="nombre">
+        <input type="text" placeholder="Apellido" [(ngModel)]="apellido">
+        <input type="tel" placeholder="Celular" [(ngModel)]="celular">     
+        <div class="radio-container">  
+          <label class="radio-label">
+              <input type="radio" name="sexo" [(ngModel)]="sexo" class="styled-radio" value="Masculino">
+              Masculino
+          </label>
+          <label class="radio-label">
+              <input type="radio" name="sexo" [(ngModel)]="sexo" class="styled-radio" value="Femenino">
+              Femenino
+          </label>
+          <label class="radio-label">
+              <input type="radio" name="sexo" [(ngModel)]="sexo" class="styled-radio" value="no_especifica">
+              Prefiero no decir
+          </label>
+        </div>
+        <input type="text" name="" id="" placeholder="Usuario" [(ngModel)]="nombre_usuario">
+        <input type="password" name="" id="" placeholder="Contraseña" [(ngModel)]="password">
+        <button class="boton-registro" (click)="registrar_usuario()">Registrarse</button>
+        
+      </div>
+    </div>
+    <footer>
+      <ion-icon name="arrow-back-circle-outline" (click)="atras()"></ion-icon>
+    </footer>
+  </div>
+</ion-content>

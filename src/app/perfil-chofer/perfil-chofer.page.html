@@ -1,0 +1,123 @@
+<ion-content [fullscreen]="true">
+  <div id="contenedor">
+      <div id="app-header">
+          <div class="profile-pic">
+              <img src="/assets/user.png" alt="" class="profile-img">
+          </div>
+          <h4>{{session.nombre}} {{session.apellido}}</h4>
+      </div>
+      <div id="app-content">
+          
+          <div class="detalle">
+              <div class="cabecera-detalle">
+                  <h5>Mi perfil</h5>
+              </div>
+              <div class="one-input div-input">
+                  <div>
+                      <label for="nombreChofer">Nombre</label>
+                      <input class="input" type="text"  value="{{perfil.nombre}} {{perfil.apellido}}" readonly>
+                  </div>
+              </div>
+              <div class="one-input div-input">
+                <div>
+                    <label for="nombreChofer">Nombre de usuario</label>
+                    <input class="input" type="text"  value="{{perfil.nombre_usuario}}" readonly>
+                </div>
+            </div>
+              <div class="one-input div-input">
+                  <div>
+                      <label for="nombreChofer">Destino ✍🏻</label>
+                      <input class="input" type="text"  [(ngModel)]="direccion" value="">
+                  </div>
+              </div>
+              <div class="one-input div-input">
+                  <div>
+                      <label for="nombreChofer">Telefono +569... ✍🏻</label>
+                      <input class="input" type="text"  [(ngModel)]="celular"value="">
+                  </div>
+              </div>
+
+              <div class="one-input div-input">
+                  <div>
+                      <label for="nombreChofer">Tarifa ✍🏻</label>
+                      <input class="input" type="text"  [(ngModel)]="tarifa" value="">
+                  </div>
+              </div>
+
+              
+              <div class="cabecera-detalle">
+                  <h5>Datos del vehiculo</h5>
+              </div>
+
+              <div class="one-input div-input">
+                  <div>
+                      <label for="nombreChofer">Marca</label>
+                      <input class="input" type="text"  value="{{perfil.marca}}" readonly>
+                  </div>
+              </div>
+
+              
+
+              <div class="two-input div-input">
+                  <div>
+                      <label for="nombreChofer">Patente</label>
+                      <input class="input" type="text"  value="{{perfil.patente}}" readonly>
+                  </div>
+                  <div>
+                      <label for="nombreChofer">Asientos</label>
+                      <input class="input" type="text"  value="{{perfil.numAsientos}}" readonly>
+                  </div>                    
+              </div>
+
+              <br>
+              <div class="two-input div-input">
+                <div>
+                    <button class="contact-button" type="button" (click)="guardar_cambios()">Guardar</button>
+                </div>
+
+              
+            </div>
+
+              <div class="slider-container">
+                  
+
+                  
+              </div>
+
+              <div class="slider-container">
+                  
+              </div>
+
+              <div class="slider-container">
+
+              </div>
+                         
+              <br>
+               
+              <br>
+              <br>
+          </div>
+      </div>
+      <div id="footer">
+        <div class="icon menu-icon" (click)="animaIcon(0, 'bienvenido')">
+            <ion-icon name="home-outline"></ion-icon>
+        </div>
+
+        <div *ngIf="session.tipo == 'chofer'" class="icon menu-icon " (click)="animaIcon(1, 'perfil-chofer')">
+            <img src="/assets/driver-menu.png" alt="">
+        </div>
+        <div *ngIf="session.tipo == 'usuario'" class="icon  menu-icon active-icon" (click)="animaIcon(1, 'perfil-usuario')">
+            <img src="/assets/usuario.png" alt="">
+        </div>
+        <div *ngIf="session.tipo == 'usuario'" class="icon  menu-icon " (click)="animaIcon(2, 'list-choferes')">
+            <img src="/assets/traffic-jam.png" alt="">
+        </div>
+        <div *ngIf="session.tipo == 'usuario'" class="icon menu-icon" (click)="animaIcon(3, 'list-recorridos')">
+            <img src="/assets/checklist.png" alt="">
+        </div>
+        <div class="icon menu-icon" (click)="logout()">
+            <ion-icon name="log-out-outline"></ion-icon>
+        </div>
+    </div>
+  </div>
+</ion-content>

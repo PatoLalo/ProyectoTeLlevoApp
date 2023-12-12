@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Kanit:wght@500&display=swap');
+
+
+#contenedor{
+    min-height: 100vh;
+    background: rgb(2,0,36);
+    background: linear-gradient(40deg, rgba(2,0,36,1) 0%, rgba(1,1,19,1) 60%, rgba(0,212,255,1) 100%);
+}
+
+*{
+    font-family: 'ABeeZee', sans-serif;
+    font-family: 'Kanit', sans-serif;
+}
+
+
+#app-header{
+    display: flex;
+    height: 10vh;
+    padding-top: 10px ;
+    padding-left: 20px;
+    color: #fff;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+
+}
+#app-content{
+    animation: derecha 1s ease;
+    text-align: center;
+    @keyframes derecha{ /* Animacion que se ejecuta cuando carga la pagina */
+        0%{
+            transform: translateX(-100px);
+            opacity: .3;
+        }
+        100%{
+            transform: translateX(0px);
+            opacity: 1;
+        }
+    }
+}
+
+.input-login{
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input {
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    outline:none;
+    background: linear-gradient(to left top, #000, #01182C) fixed;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+    transition: all 0.5s;
+  }
+  
+  .input:hover {
+    border: 2px solid rgba(255,255,255,0.5);
+  }
+  .input:focus {
+    border: 2px solid rgba(255,255,255,0.5);
+    background: linear-gradient(to left top, #000, #02325c) fixed;
+  }
+
+  .submit-container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .btn-submit{
+    color: #e2e2e2;
+    background: linear-gradient(to left top, #000, #ca9700) fixed;
+    width: 70%;
+    border: none;
+    border-radius: 10px;
+  } 
+
+  .btn-submit:hover{
+    background: linear-gradient(to left top, #000, #ffbf00) fixed;
+  }
+
+
+  a{
+    color: #e2e2e2;
+  }

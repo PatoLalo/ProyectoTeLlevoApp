@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+    <div id="contenedor">
+  
+      <div id="app-header">
+          <ion-icon name="car-sport-outline"></ion-icon>
+          <h6>Formulario de registro conductor</h6>
+      </div>
+  
+      <div class="app-content">
+  
+  
+        <div class="formulario">
+          
+          <input type="text" placeholder="Rut" [(ngModel)]="rut">
+          <input type="text" placeholder="Nombre" [(ngModel)]="nombre">
+          <input type="text" placeholder="Apellido" [(ngModel)]="apellido">
+          <input type="text" placeholder="Celular" [(ngModel)]="celular">
+          <input type="text" placeholder="Marca automovil" [(ngModel)]="marca">   
+          <input type="text" placeholder="Patente" [(ngModel)]="patente">
+          <div class="asiento-container">
+            <label for="" class="asiento-lbl">   
+              Asientos
+            </label>
+            <input type="number" class="numAsientos" [(ngModel)]="numAsientos"> 
+          </div>
+          <div class="radio-container">
+            <label class="radio-label">
+                <input type="radio" name="sexo" class="styled-radio" [(ngModel)]="sexo" value="masculino">
+                Masculino
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="sexo" class="styled-radio" [(ngModel)]="sexo" value="femenimo">
+                Femenino
+            </label>
+            <label class="radio-label">
+                <input type="radio" name="sexo" class="styled-radio" [(ngModel)]="sexo" value="no_aplica">
+                Prefiero no decir
+            </label>
+          </div>
+          <input type="text" placeholder="Elegir nombre usuario" [(ngModel)]="nombre_usuario">
+          <input type="password"  placeholder="Contraseña" [(ngModel)]="password">
+          <button class="boton-registro" (click)="registrar_chofer()">Registrarse</button>
+        </div>
+      </div>
+      <footer>
+        <ion-icon name="arrow-back-circle-outline" (click)="atras()"></ion-icon>
+      </footer>
+    </div>
+  </ion-content>
+  

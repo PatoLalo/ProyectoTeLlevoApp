@@ -1,0 +1,160 @@
+<ion-content [fullscreen]="true">
+    <div id="contenedor">
+        <div id="app-header">
+            <div class="profile-pic">
+                <img src="/assets/user.png" alt="" class="profile-img">
+            </div>
+            <h4>{{session.nombre}} {{session.apellido}}</h4>
+
+
+        </div>
+        <div id="app-content">
+            <div class="cabecera">
+                <div class="title">
+                    <h5>¿Dónde quieres viajar?</h5>
+                </div>
+                
+                <div class="submit-container">
+                    <input type="submit"  value="Seleccionar destino" class="btn-submit" (click)="irA('destino')">
+                </div>
+                
+                <div style="padding-left:20px">
+                </div>
+            </div>
+
+            <div *ngIf="list_choferes_disponibles?.length > 0">
+                <div class="cabecera-detalle">
+                    <p>Estos choferes te pueden llevar</p>
+                </div>
+
+                <div class="card-chofer" *ngFor="let chofer_diponible of list_choferes_disponibles">
+                    <div class="car-pic">
+                        <img src="/assets/{{chofer_diponible.img}}" alt="" class="icon">
+                    </div>
+                    <div class="card-footer">
+                        <img src="/assets/map.png" alt="" class="card-icon"><span>{{chofer_diponible.direccion}}</span>
+                        <div class="bordered">
+                            <img src="/assets/all-agree.png" alt="" class="card-icon "><span>{{chofer_diponible.numAsientos}}</span>
+                        </div>
+                        <img src="/assets/info.png" alt="" class="card-icon info-expand" (click)="expand(0, chofer_diponible.id)">
+                    </div>
+                </div>
+
+                <div class="cabecera-detalle">
+                    <p>Otros destinos disponibles</p>
+                </div>
+            </div>            
+
+
+
+
+            <div class="card-chofer" *ngFor="let chofer of list_choferes">
+                <div class="car-pic">
+                    <img src="/assets/{{chofer.img}}" alt="" class="icon">
+                </div>
+                <div class="card-footer">
+                    <img src="/assets/map.png" alt="" class="card-icon"><span>{{chofer.direccion}}</span>
+                    <div class="bordered">
+                        <img src="/assets/all-agree.png" alt="" class="card-icon "><span>{{chofer.numAsientos}}</span>
+                    </div>
+                    <img src="/assets/info.png" alt="" class="card-icon info-expand" (click)="expand(0, chofer.id)">
+                </div>
+            </div>
+
+            <!-- <div class="card-chofer">
+                <div class="car-pic">
+                    <img src="/assets/auto-ejemplo2.jpg" alt="" class="icon">
+                </div>
+                <div class="card-footer">
+                    <img src="/assets/map.png" alt="" class="card-icon"><span>DIRECCION</span>
+                    <div class="bordered">
+                        <img src="/assets/all-agree.png" alt="" class="card-icon "><span>1</span>
+                    </div>
+                    <img src="/assets/info.png" alt="" class="card-icon info-expand" (click)="expand(0)">
+                </div>
+            </div>
+
+            <div class="card-chofer">
+                <div class="car-pic">
+                    <img src="/assets/auto-ejemplo.jpg" alt="" class="icon">
+                </div>
+                <div class="card-footer">
+                    <img src="/assets/map.png" alt="" class="card-icon"><span>DIRECCION</span>
+
+                    <div class="bordered">
+                        <img src="/assets/all-agree.png" alt="" class="card-icon "><span>3</span>
+                    </div>
+                    <img src="/assets/info.png" alt="" class="card-icon info-expand" (click)="expand(0)">
+                </div>
+            </div>
+
+            <div class="card-chofer">
+                <div class="car-pic">
+                    <img src="/assets/auto-ejemplo2.jpg" alt="" class="icon">
+                </div>
+                <div class="card-footer">
+                    <img src="/assets/map.png" alt="" class="card-icon"><span>DIRECCION</span>
+                    <div class="bordered">
+                        <img src="/assets/all-agree.png" alt="" class="card-icon "><span>3</span>
+                    </div>
+                    <img src="/assets/info.png" alt="" class="card-icon info-expand" (click)="expand(0)">
+                </div>
+            </div>
+
+            <div class="card-chofer">
+                <div class="car-pic">
+                    <img src="/assets/auto-ejemplo.jpg" alt="" class="icon">
+                </div>
+                <div class="card-footer">
+                    <img src="/assets/map.png" alt="" class="card-icon"><span>DIRECCION</span>
+                    <div class="bordered">
+                        <img src="/assets/all-agree.png" alt="" class="card-icon "><span>2</span>
+                    </div>
+                    <img src="/assets/info.png" alt="" class="card-icon">
+                </div>
+            </div>
+
+            <div class="card-chofer">
+                <div class="car-pic">
+                    <img src="/assets/auto-ejemplo2.jpg" alt="" class="icon">
+                </div>
+                <div class="card-footer">
+                    <span><img src="/assets/map.png" alt="" class="card-icon">DIRECCION</span>
+                    <div class="bordered">
+                        <img src="/assets/all-agree.png" alt="" class="card-icon "><span>1</span>
+                    </div>
+                    <img src="/assets/info.png" alt="" class="card-icon">
+                </div>
+            </div>
+            <div class="container-choferes">
+
+            </div> -->
+            
+        
+        </div>
+         
+        <div id="footer">
+            <div class="icon menu-icon" (click)="animaIcon(0, 'bienvenido')">
+                <ion-icon name="home-outline"></ion-icon>
+            </div>
+
+            <div *ngIf="session.tipo == 'chofer'" class="icon menu-icon " (click)="animaIcon(1, 'perfil-chofer')">
+                <img src="/assets/driver-menu.png" alt="">
+            </div>
+            <div *ngIf="session.tipo == 'usuario'" class="icon  menu-icon " (click)="animaIcon(1, 'perfil-usuario')">
+                <img src="/assets/usuario.png" alt="">
+            </div>
+            <div *ngIf="session.tipo == 'usuario'" class="icon  menu-icon active-icon" (click)="animaIcon(2, 'list-choferes')">
+                <img src="/assets/traffic-jam.png" alt="">
+            </div>
+            <div *ngIf="session.tipo == 'usuario'" class="icon menu-icon" (click)="animaIcon(3, 'list-recorridos')">
+                <img src="/assets/checklist.png" alt="">
+            </div>
+            <div class="icon menu-icon" (click)="animaIcon(4, 'login')">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+
+
+</ion-content>

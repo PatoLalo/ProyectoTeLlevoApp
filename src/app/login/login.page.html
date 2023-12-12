@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true">
+    <div id="contenedor">
+        <div id="app-content">
+            <div id="app-header">
+                <div class="profile-pic">
+                </div>
+                <h4>TeLlevoApp</h4>
+
+            </div>
+                <div class="container">
+                    <div class="input-login">
+                        <input type="email" class="input" placeholder="Usuario" [(ngModel)]="nombre_usuario"/>
+                    </div>
+
+                    <div class="input-login">
+                        <input type="password" class="input" placeholder="Contraseña" [(ngModel)]="password"/>
+                    </div>
+
+                    <div class="submit-container">
+                        <input type="submit" value="Entrar" class="btn-submit" (click)="login()">
+                    </div>
+
+                    <div>
+                        <a href="registro-usuario">¿Quieres viajar con nosotros?</a>
+                        
+                    </div>
+                    <div>
+                        <a href="login-driver" >¿Quieres compartir tu vehículo?</a>
+                    </div>
+                </div>
+
+        </div>
+
+    </div>
+</ion-content>

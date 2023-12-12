@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+    <div id="contenedor">
+        <div id="app-header">
+            <div class="profile-pic">
+                <img src="/assets/user.png" alt="" class="profile-img">
+            </div>
+            <h4>Eduardo Maulén</h4>
+        </div>
+        <div id="app-content">
+            <div class="contenido">
+                <div class="qr">{{texto}}</div>
+                <div class="botonesQR">
+                    <button (click)="leerQR()">Leer QR</button>
+                    <button (click)="detenerQR()">Detener QR</button>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="icon menu-icon" >
+                <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <div class="icon menu-icon " >
+                <img src="/assets/driver-menu.png" alt="">
+            </div>
+            <div class="icon  menu-icon active-icon" >
+                <img src="/assets/traffic-jam.png" >
+            </div>
+            <div class="icon menu-icon" >
+                <img src="/assets/checklist.png" alt="">
+            </div>
+        </div>
+    </div>
+</ion-content>

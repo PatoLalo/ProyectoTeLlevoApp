@@ -1,0 +1,69 @@
+<ion-content [fullscreen]="true">
+  <div id="contenedor">
+    <div id="app-header">
+      <div class="profile-pic">
+        <img src="/assets/user.png" alt="" class="profile-img">
+      </div>
+      <h4>{{session.nombre}} {{session.apellido}}</h4>
+    </div>
+    <div id="app-content">
+        <div class="title">
+            <h5>Historial de viajes</h5>
+        </div>
+        <br>
+        <div class="destinos" *ngFor="let viaje of session.historial">
+            <div class="destino">
+            <div class="foto-driver">
+                <img src="/assets/user.png" alt="">
+            </div>
+            <div class="info-destino">
+                <h1>{{viaje.chofer}}</h1>
+                <h4>{{viaje.direccion}}</h4>
+                <h4>Tarifa: ${{viaje.tarifa}}</h4>
+            </div>
+            <div class="check-disp">
+                <img src="/assets/conversationV.png" alt=""  class="icon-disponibilidad" (click)="animaIconCard(1,'contactar', viaje.chofer_id)">
+            </div>
+        </div>
+        
+        
+    </div>
+    <!--<div class="destino">
+      <div class="foto-driver">
+        <img src="/assets/user.png" alt="">
+      </div>
+      <div class="info-destino">
+        <h1>Patricio Hurtado Cerda</h1>
+        <h4>Pomaire, villa orco 1245</h4>
+        <h4>Tarifa: $2.000</h4>
+      </div>
+      <div class="check-disp">
+        <img src="/assets/unavailable.png" alt="" class="icon-disponibilidad" (click)="animaIconCard(0,'detalle-chofer')">
+      </div>
+    </div>-->
+    </div>
+    <div id="footer">
+        <div class="icon menu-icon" (click)="animaIcon(0, 'bienvenido')">
+            <ion-icon name="home-outline"></ion-icon>
+        </div>
+
+        <div *ngIf="session.tipo == 'chofer'" class="icon menu-icon " (click)="animaIcon(1, 'perfil-chofer')">
+            <img src="/assets/driver-menu.png" alt="">
+        </div>
+        <div *ngIf="session.tipo == 'usuario'" class="icon  menu-icon active-icon" (click)="animaIcon(1, 'perfil-usuario')">
+            <img src="/assets/usuario.png" alt="">
+        </div>
+        <div *ngIf="session.tipo == 'usuario'" class="icon  menu-icon " (click)="animaIcon(2, 'list-choferes')">
+            <img src="/assets/traffic-jam.png" alt="">
+        </div>
+        <div *ngIf="session.tipo == 'usuario'" class="icon menu-icon" (click)="animaIcon(3, 'list-recorridos')">
+            <img src="/assets/checklist.png" alt="">
+        </div>
+        <div class="icon menu-icon" (click)="logout()">
+            <ion-icon name="log-out-outline"></ion-icon>
+        </div>
+    </div>
+
+  </div>
+</ion-content>
+

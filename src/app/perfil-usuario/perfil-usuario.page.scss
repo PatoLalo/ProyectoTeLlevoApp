@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&family=Kanit:wght@500&display=swap');
+
+
+#contenedor{
+    min-height: 100vh;
+    background: rgb(2,0,36);
+background: linear-gradient(40deg, rgba(2,0,36,1) 0%, rgba(1,1,19,1) 60%, rgba(0,212,255,1) 100%);
+}
+
+*{
+    font-family: 'ABeeZee', sans-serif;
+    font-family: 'Kanit', sans-serif;
+}
+
+#app-header{
+    display: flex;
+    height: 10vh;
+    padding-top: 10px ;
+    padding-left: 20px;
+    color: #fff;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+
+}
+
+.profile-pic{
+    width: 40px;
+    height: 50px;
+    text-align: center;
+    border-radius: 20%;
+    align-self: end;
+    text-align: center;
+    align-self: end;
+}
+#app-content{
+    height: 80vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    animation: derecha 1s ease;
+
+}
+
+@keyframes derecha {
+
+    /* Animacion que se ejecuta cuando carga la pagina */
+    0% {
+        transform: translateX(-100px);
+        opacity: .3;
+    }
+
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+#footer{
+    height: 10vh;
+    background-color: #F5B600;
+    
+    color: #291606;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.1rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    .icon{
+        width: 23px;
+    }
+}
+
+.cabecera{
+    padding-left: 10px;
+}
+.title {
+    color: #e3e3e3;
+    display: flex;
+}
+
+.div-input{
+    padding-left: 20px;
+}
+
+.detalle{
+    color: #e3e3e3;
+}
+
+.cabecera-detalle{
+    color: #fff;
+    width: 95%;
+    text-align: center;
+    background-color: #F5B600;
+    border-top-right-radius: 100px;
+}
+
+// .car-pic-detalle{
+//     width: 100%;
+//     text-align: center;
+//     img{
+//         width: 150px;
+//         border-radius: 50%;
+//     }
+// }
+
+.one-input{
+    display: flex;
+    margin: 10px 0 ;
+    div{
+        width: 90%;
+    }
+    input{
+        font-size: 0.8rem;
+        width: 100%;
+    }
+}
+
+.two-input{
+    display: flex;
+
+    div{
+        width: 50%;
+    }
+
+    input{
+        font-size: 0.8rem;
+        width: 80%;
+    }
+}
+
+
+.input {
+    width: 80%;
+    padding: 10px;
+    font-size: 18px;
+    outline:none;
+    background: linear-gradient(to left top, #000, #01182C) fixed;
+    border-radius: 10px;
+    border: 2px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.8);
+    transition: all 0.5s;
+  }
+  .op{
+    background-color: #F5B600;
+  }
+
+  .input:focus {
+    border: 2px solid rgba(255,255,255,0.5);
+    background: linear-gradient(to left top, #000, #02325c) fixed;
+  }
+
+
+  /* CHECK */
+
+   /* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 0px;
+    bottom: 0px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #FFD700;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #FFD700;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  } 
+/* 
+  .slider-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .slider-input{
+    display: flex;
+    justify-content: center;
+  } */
+
+//   .slider-container{
+//     display: flex;
+//     justify-content: space-evenly;
+//     margin-bottom: 10px;
+//   }
+  .hora{
+    width: 100px;
+  }
+
+  .contact-button{
+    width: 70%;
+    padding: 10px;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border: 2px solid yellow;
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  .active-icon {
+    border-bottom: 3px solid #01182C;
+    border-radius: 2px;
+}

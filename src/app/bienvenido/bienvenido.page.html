@@ -1,0 +1,40 @@
+
+<ion-content [fullscreen]="true">
+  <div id="contenedor">
+    <header>
+      <div class="app-header">
+        <h1>TeLlevoApp</h1>
+      </div>
+    </header>
+    <article>
+      <section class="bienvenida">
+          <div class="texto">
+            <p>
+              ¡Bienvenido {{ session_user.nombre }} {{ session_user.apellido }} a TeLlevoApp! <br><br>
+              Viaja con nosotros cuando lo necesites, de manera segura y confiable.
+              <br><br><br>
+              Elige una opción
+            </p>
+          </div>
+
+          <h1>
+            {{ session_user.tipo == "chofer" ? "ERES UN CHOFER" : "NO ERES CHOFER" }}
+          </h1>
+          <div class="opciones">
+            <div *ngIf="session_user.tipo == 'chofer'" class="icono">
+              <img src="/assets/driver.png" alt="" class="animacion" (click)="irA('perfil-chofer')">
+            </div> 
+            <div *ngIf="session_user.tipo == 'usuario'" class="icono">
+                <img src="/assets/bussiness-man.png" alt="" class="animacion" (click)="irA('perfil-usuario')">
+              </div> 
+            <div *ngIf="session_user.tipo == 'usuario'" class="icono">
+              <img src="/assets/traffic-jam(2).png" alt="" class="animacion" (click)="irA('list-choferes')">
+            </div> 
+            <div class="icono" *ngIf="session_user.tipo == 'usuario'">
+                <img src="/assets/itinerary.png" alt="" class="animacion" (click)="irA('list-recorridos')">
+            </div>
+          </div>
+      </section>
+    </article> 
+  </div>
+</ion-content>

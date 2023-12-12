@@ -1,0 +1,85 @@
+<ion-content [fullscreen]="true">
+    <div id="contenedor">
+        <div id="app-header">
+            <div class="profile-pic">
+                <img src="/assets/user.png" alt="" class="profile-img">
+            </div>
+            <h4>{{session.nombre}} {{session.apellido}}</h4>
+        </div>
+        <div id="app-content">
+            <div class="cabecera-detalle">
+                <h5>Contactar</h5>
+            </div>
+
+            <div class="contactar-content">
+                <div class="one-input div-input">
+                    <div>
+                        <label for="nombreChofer">Nombre</label>
+                        <input class="input" type="text" id="nombreChofer" value="{{chofer.nombre}} {{chofer.apellido}}" readonly>
+                    </div>
+                </div>
+                <div class="one-input div-input">
+                    <div>
+                        <label for="nombreChofer">Destino</label>
+                        <input class="input" type="text" id="nombreChofer" value="{{chofer.direccion}}" readonly>
+                    </div>
+                </div>
+                <div class="one-input div-input">
+                    <div>
+                        <label for="nombreChofer">Telefono</label>
+                        <input class="input" type="text" id="nombreChofer" value="+569{{chofer.celular}}" readonly>
+                    </div>
+                </div>
+                <!--<div class="one-input div-input">
+                    <div>
+                        <label for="nombreChofer">Mensaje</label>
+                        <textarea name="" id="" rows="4" class="input" style="width: 100%;">
+
+                        </textarea>
+                    </div>
+                </div>--->
+
+                <div class="two-input div-input">
+                    <div>
+                        <a href="tel:+569{{chofer.celular}}">
+                            <button class="contact-button" type="button" value="Contactar">Llamar</button>
+                        </a>
+                    </div>
+
+                    <div>
+                        <button class="contact-button" type="button" (click)="tomar_viaje()">Viajar!</button>
+                    </div>
+                    <!--<div>
+                        <button class="contact-button" type="button" value="Contactar">Enviar</button>
+                    </div>-->
+                </div>
+            </div>
+            <br>
+
+        </div>
+        <div id="footer">
+            <div class="icon menu-icon" (click)="animaIcon(0, 'bienvenido')">
+                <ion-icon name="home-outline"></ion-icon>
+            </div>
+
+            <div *ngIf="session.tipo == 'chofer'" class="icon menu-icon " (click)="animaIcon(1, 'perfil-chofer')">
+                <img src="/assets/driver-menu.png" alt="">
+            </div>
+            <div *ngIf="session.tipo == 'usuario'" class="icon  menu-icon " (click)="animaIcon(1, 'perfil-usuario')">
+                <img src="/assets/usuario.png" alt="">
+            </div>
+            <div *ngIf="session.tipo == 'usuario'" class="icon  menu-icon active-icon" (click)="animaIcon(2, 'list-choferes')">
+                <img src="/assets/traffic-jam.png" alt="">
+            </div>
+            <div *ngIf="session.tipo == 'usuario'" class="icon menu-icon" (click)="animaIcon(3, 'list-recorridos')">
+                <img src="/assets/checklist.png" alt="">
+            </div>
+            <div class="icon menu-icon" (click)="logout()">
+                <ion-icon name="log-out-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+</ion-content>
